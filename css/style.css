@@ -1,0 +1,141 @@
+/* === Reset & Global Style === */
+* { box-sizing: border-box; }
+
+:root{
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading: "Pacifico", cursive;
+}
+
+/* BODY gunakan Inter (senang dibaca) */
+body {
+  font-family: var(--font-body);
+  text-shadow: none;               /* buang shadow pada teks biasa */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #a0c2ee;
+  color: #0a174d;
+  font-size: 16px;                 /* asas */
+}
+
+/* === Header === */
+header {
+  background: #ecd3a1;
+  padding: 24px 16px;
+  text-align: center;
+  color: #4d320c;
+}
+header h1 {
+  margin: 0;
+  font-family: var(--font-heading); /* tajuk pakai Pacifico */
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: .5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.12); /* halus je */
+}
+
+/* === Navigation === */
+nav {
+  background: #f5e7ad;
+  padding: 10px 12px;
+  text-align: center;
+}
+nav ul {
+  list-style: none; margin:0; padding:0;
+  display: inline-flex; gap:16px; flex-wrap: wrap;
+}
+nav a {
+  color: #4d320c;
+  text-decoration: none;
+  font-weight: 600;                /* sedikit tebal */
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+nav a:hover, nav a:focus {
+  text-decoration: underline;
+  outline: none;
+  background: rgba(77, 50, 12, 0.1);
+}
+
+/* === Container / Card === */
+.container { padding: 20px; max-width: 1200px; margin: auto; }
+
+.card {
+  background: linear-gradient(to right, #e6dada, #ffefba);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.card h2, .card h3 {
+  margin-top: 0;
+  color: #283076;
+  font-family: var(--font-heading);         /* tajuk dalam card = Pacifico */
+  letter-spacing: .3px;
+}
+
+/* Isi perenggan lebih mudah dibaca */
+.card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #10204e;
+}
+
+/* === Grid Aktiviti === */
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; margin-top: 20px;
+}
+.activity-card {
+  background: linear-gradient(to right, #5A9F4B , #1D6B2B );
+  border-radius: 12px; overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  text-align: left; transition: transform .25s ease;
+}
+.activity-card:hover { transform: translateY(-5px); }
+.activity-card img { width:100%; height:180px; object-fit:cover; display:block; }
+
+/* Tajuk/teks dalam kad aktiviti – kekalkan kontras tinggi */
+.activity-info { padding: 15px; text-align:left; }
+.activity-info h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: #fff;
+  text-shadow: 0 2px 3px rgba(0,0,0,.25);
+}
+.activity-info p {
+  margin: 0;
+  font-family: var(--font-body);   /* isi pakai Inter */
+  font-size: .96rem;
+  color: #f6fff6;
+}
+.activity-price {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #ffefba;
+  font-family: var(--font-body);
+}
+
+/* === Form === */
+form label {
+  display:block; margin:10px 0 6px; font-weight:700; font-family: var(--font-body);
+}
+input[type="text"], input[type="email"], textarea {
+  width:100%; padding:10px 12px; border-radius:8px;
+  border:1px solid rgba(0,0,0,0.2); background:#fff; font-family: var(--font-body);
+  font-size: 1rem;
+}
+button, .btn {
+  display:inline-block; border:0; border-radius:10px; padding:10px 16px;
+  background:#1D6B2B; color:#fff; font-weight:700; cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,0.18); font-family: var(--font-body);
+}
+button:hover, .btn:hover, button:focus, .btn:focus { filter:brightness(1.05); outline:none; }
+
+/* === Footer === */
+footer {
+  background:#e7d2b1; color:#4d320c; text-align:center; padding:15px; margin-top:20px;
+  font-family: var(--font-body);
+}
